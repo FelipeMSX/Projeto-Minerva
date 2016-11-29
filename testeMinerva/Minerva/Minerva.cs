@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MinervaPRO.Minerva;
+using static Minerva.Minerva;
 
-namespace MinervaPRO
+namespace Minerva
 {
-	
+	#region Scanner
 	//Scanner - Analyze
 	/// <summary>
 	/// Analizar e decidir se um controle é necessário para o processo.
 	/// </summary>
 	public partial class Minerva
 	{
+		public readonly String[] LinesOfDesign;
+		public readonly String[] LinesofCode;
 
 		/// <summary>
 		/// Lista de controles que serão incluídos na lista, somente os controles listados serão analisados.
@@ -30,9 +34,15 @@ namespace MinervaPRO
 		/// Armazena o formulário de entrada.
 		/// </summary>
 		private Form FormSource { get; }
-		public Minerva(Form input)
+		public Minerva(String filepathDesign, String filepathCode, Form input)
 		{
-			FormSource = input;
+			String s = "blabla \" aspas\" blabla";
+			string e = "Felipe.Objeto.Aline()";
+			bool teste = Regex.IsMatch(e, "Felipe" + "\\s*\\(\\s*[A-Za-z0-9_.,\\s\"]*\\s*\\)");
+			bool teste2 = Regex.IsMatch(e, "F");
+			LinesOfDesign = File.ReadAllLines   (filepathDesign);
+			LinesofCode = File.ReadAllLines(filepathCode);
+			FormSource	= input;
 			Generate(FormSource, FormSource.Name);
 		}
 
@@ -48,7 +58,7 @@ namespace MinervaPRO
 			{
 				if (IsRelevantControl(currentControl))
 				{
-					AnalyzedControls.Add(name+"|" + currentControl.Name, new TestObject(currentControl));
+					AnalyzedControls.Add(currentControl.Name, new TestObject(currentControl));
 				}
 				if (currentControl.HasChildren)
 					Generate(currentControl, currentControl.Name);
@@ -69,7 +79,6 @@ namespace MinervaPRO
 			}
 			return false;
 		}
-
 	}
 
 
@@ -87,12 +96,77 @@ namespace MinervaPRO
 		/// <UNKOWN>Não seja possível classificar alguma linha ela é classificada como desconhecida.</UNKOWN>
 		/// </summary>
 		public enum ControlDeclarationType { METHOD_CALL, OBJECT_INVOCATION, EVENT_ASSOCIATION, UNKNOWN };
+
+		public void AnalyzeLine(String line)
+		{
+			line = removeTAB(line);
+			TestObject testObject = GetControl(line);
+			if (IsComment(line))
+				return; //Ignorar
+			if (testObject == null)
+				return; //Ignorar
+			
+			//Classificação da linha.
+			if (IsMethodCall(line,testObject))
+			{
+
+			}
+
+		}
+
+		public bool IsMethodCall(String line, TestObject tObject)
+		{
+			return Regex.IsMatch(line, line+@"\(\s+(\w)+\s+(,\s+\w+\s+)*\)");
+		}
+
+		public bool IsObjectInvocation(String line)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool IsEventAssociation(String line)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool IsUnknown(String line)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool UnnecessaryLine(String line)
+		{
+			throw new NotImplementedException();
+		}
+		public bool IsComment(String line)
+		{
+			return line.Contains("\\");
+		}
+
+		public TestObject GetControl(String line)
+		{
+			return AnalyzedControls.Single(x => line.Contains(x.Key)).Value;
+		}
+		public static String removeTAB(String line)
+		{
+			return line.Replace("\t","");	
+		}
 	}
 
-	//Scanner - StructAuxilator
+	//Scanner
+	/// <summary>
+	///	Define um tipo para representar uma linha.
+	/// </summary>
 	public struct LineSemantic
 	{
+		/// <summary>
+		/// Posição no arquivo.
+		/// </summary>
 		public Int16 Line { get; }
+
+		/// <summary>
+		/// classificação da linha analisada de acordo com sua semântica.
+		/// </summary>
 		public ControlDeclarationType Classification { get; }
 
 		public LineSemantic(Int16 line, ControlDeclarationType dType)
@@ -102,6 +176,7 @@ namespace MinervaPRO
 		}
 	}
 
+	#endregion
 	//Classe utilizada durante todo o processo, a cada etapa um atributo é colocado na classe.
 	public class TestObject
 	{
@@ -114,6 +189,4 @@ namespace MinervaPRO
 			Control = control;
 		}
 	}
-
-
 }

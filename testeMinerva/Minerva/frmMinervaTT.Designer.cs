@@ -1,4 +1,4 @@
-﻿namespace Minerva
+﻿  namespace Minerva
 {
 	partial class frmMinervaTT
 	{
