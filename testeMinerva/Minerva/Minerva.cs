@@ -17,6 +17,7 @@ namespace Minerva
 	/// </summary>
 	public partial class Minerva
 	{
+
 		public readonly String[] LinesOfDesign;
 		public readonly String[] LinesofCode;
 
@@ -36,10 +37,6 @@ namespace Minerva
 		private Form FormSource { get; }
 		public Minerva(String filepathDesign, String filepathCode, Form input)
 		{
-			String s = "blabla \" aspas\" blabla";
-			string e = "Felipe.Objeto.Aline()";
-			bool teste = Regex.IsMatch(e, "Felipe" + "\\s*\\(\\s*[A-Za-z0-9_.,\\s\"]*\\s*\\)");
-			bool teste2 = Regex.IsMatch(e, "F");
 			LinesOfDesign = File.ReadAllLines   (filepathDesign);
 			LinesofCode = File.ReadAllLines(filepathCode);
 			FormSource	= input;
@@ -80,7 +77,6 @@ namespace Minerva
 			return false;
 		}
 	}
-
 
 	//Scanner - Reader
 	/// <summary>
@@ -177,6 +173,18 @@ namespace Minerva
 	}
 
 	#endregion
+
+	#region Montador de Dependência
+
+	#endregion
+
+	#region Resolver Dependência com o Banco
+
+	#endregion
+
+	#region Gerador de Controles UI
+
+	#endregion
 	//Classe utilizada durante todo o processo, a cada etapa um atributo é colocado na classe.
 	public class TestObject
 	{
@@ -184,9 +192,16 @@ namespace Minerva
 
 		public List<LineSemantic> ControlOcorrence { get; set; } = new List<LineSemantic>();
 
+		/// <summary>
+		/// Cada componente deve possuir uma priopridade, essa prioridade definirá a ordem de preenchimento dos componentes.
+		/// Prioridade menor será executada primeiro.
+		/// </summary>
+		public Int16 Priority { get; set; } = 1;
+
 		public TestObject(Control control)
 		{
 			Control = control;
 		}
 	}
+
 }

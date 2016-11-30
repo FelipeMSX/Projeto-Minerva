@@ -29,7 +29,6 @@ namespace MinervaTG
     public partial class UIMap
     {
         
-   
         /// <summary>
         /// FirstContact
         /// </summary>
@@ -93,8 +92,6 @@ namespace MinervaTG
         }
         
         #region Properties
-
-        
         public virtual MinervaTestOneParams MinervaTestOneParams
         {
             get
@@ -121,14 +118,12 @@ namespace MinervaTG
         #endregion
         
         #region Fields
- 
         private MinervaTestOneParams mMinervaTestOneParams;
         
         private UIMinervaProjectWindow mUIMinervaProjectWindow;
         #endregion
     }
     
-
     /// <summary>
     /// Parameters to be passed into 'MinervaTestOne'
     /// </summary>

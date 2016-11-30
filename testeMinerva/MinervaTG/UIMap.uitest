@@ -88,62 +88,6 @@
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
     </MouseAction>
-    <TestStepMarkerAction Comment="First Contact" MarkerInformation="MinervaFluxTestCase">
-      <ParameterName />
-      <StepId>-1</StepId>
-      <Direction>Start</Direction>
-      <Outcome />
-      <Disabled>false</Disabled>
-      <WorkItemId>0</WorkItemId>
-      <MarkerRegionType>Action</MarkerRegionType>
-    </TestStepMarkerAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtFirstNameWindow.UITxtFirstNameEdit">
-      <ParameterName />
-      <Value Encoded="false">Felipe</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <SendKeysAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtFirstNameWindow.UITxtFirstNameEdit">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Text Encoded="false">{Tab}</Text>
-    </SendKeysAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtLastNameWindow.UITxtLastNameEdit">
-      <ParameterName />
-      <Value Encoded="false">Morais</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <SendKeysAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtLastNameWindow.UITxtLastNameEdit">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Text Encoded="false">{Tab}</Text>
-    </SendKeysAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtEmailWindow.UITxtEmailEdit">
-      <ParameterName />
-      <Value Encoded="false">felipe_link64@hotmail.com</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <SendKeysAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtEmailWindow.UITxtEmailEdit">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Text Encoded="false">{Tab}</Text>
-    </SendKeysAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITextBox1Window.UITextBox1Edit">
-      <ParameterName />
-      <Value Encoded="false">this is SPARTAAAAAA!!!</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <MouseAction UIObjectName="UIMap.UIMinervaProjectWindow.UISendWindow.UISendButton">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="42" Y="24" />
-      <WheelDirection>0</WheelDirection>
-      <ActionType>Click</ActionType>
-      <MouseButton>Left</MouseButton>
-    </MouseAction>
     <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtFirstNameWindow.UITxtFirstNameEdit">
       <ParameterName />
       <Value Encoded="false">Felipe</Value>
