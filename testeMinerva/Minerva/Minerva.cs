@@ -17,10 +17,6 @@ namespace Minerva
 	/// </summary>
 	public partial class Minerva
 	{
-
-		public readonly String[] LinesOfDesign;
-		public readonly String[] LinesofCode;
-
 		/// <summary>
 		/// Lista de controles que serão incluídos na lista, somente os controles listados serão analisados.
 		/// </summary>
@@ -37,8 +33,7 @@ namespace Minerva
 		private Form FormSource { get; }
 		public Minerva(String filepathDesign, String filepathCode, Form input)
 		{
-			LinesOfDesign = File.ReadAllLines   (filepathDesign);
-			LinesofCode = File.ReadAllLines(filepathCode);
+		
 			FormSource	= input;
 			Generate(FormSource, FormSource.Name);
 		}
@@ -63,134 +58,52 @@ namespace Minerva
 		}
 
 		/// <summary>
-		/// Avalia se um controle é relevante de acordo com a lista de aceitação.
+		/// Avalia se um controle é relevante de acordo com uma função de aceitação definida para cada tipo de controle.
 		/// </summary>
 		/// <param name="control">Controle do Windows Forms.</param>
-		/// <returns>Retorna true caso o controle esteja na lista, caso contrário, false.</returns>
 		private bool IsRelevantControl(Control control)
 		{
-			foreach (Type ac in AcceptableControls)
+			if(control is TextBox)
 			{
-				if (control.GetType() == ac)
-					return true;
+				AcceptableControl(control as TextBox);
+			}
+			else
+			if(control is Button)
+			{
+				AcceptableControl(control as Button);
 			}
 			return false;
 		}
-	}
-
-	//Scanner - Reader
-	/// <summary>
-	/// Sua função é pegar cada controle e criar uma lista de ocorrências do controle no formulário para utilização nas demais etapas.
-	/// </summary>
-	public partial class Minerva
-	{
-		/// <summary>
-		/// Ao escanear o código procura identificar o que o código está fazendo com o controle para auxiliar futuramente no processo.
-		/// <METHOD_CALL>Caso o controle esteja chamando alguma função</METHOD_CALL>
-		/// <OBJECT_INVOCATION>Operação de atribuição a uma propriedade do controle ou acesso a ele são classaficadas nesse contexto.</OBJECT_INVOCATION>
-		/// <EVENT_ASSOCIATION>Eventos adicionados ou removidos estão nessa categoria.</EVENT_ASSOCIATION>
-		/// <UNKOWN>Não seja possível classificar alguma linha ela é classificada como desconhecida.</UNKOWN>
-		/// </summary>
-		public enum ControlDeclarationType { METHOD_CALL, OBJECT_INVOCATION, EVENT_ASSOCIATION, UNKNOWN };
-
-		public void AnalyzeLine(String line)
-		{
-			line = removeTAB(line);
-			TestObject testObject = GetControl(line);
-			if (IsComment(line))
-				return; //Ignorar
-			if (testObject == null)
-				return; //Ignorar
-			
-			//Classificação da linha.
-			if (IsMethodCall(line,testObject))
-			{
-
-			}
-
-		}
-
-		public bool IsMethodCall(String line, TestObject tObject)
-		{
-			return Regex.IsMatch(line, line+@"\(\s+(\w)+\s+(,\s+\w+\s+)*\)");
-		}
-
-		public bool IsObjectInvocation(String line)
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool IsEventAssociation(String line)
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool IsUnknown(String line)
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool UnnecessaryLine(String line)
-		{
-			throw new NotImplementedException();
-		}
-		public bool IsComment(String line)
-		{
-			return line.Contains("\\");
-		}
-
-		public TestObject GetControl(String line)
-		{
-			return AnalyzedControls.Single(x => line.Contains(x.Key)).Value;
-		}
-		public static String removeTAB(String line)
-		{
-			return line.Replace("\t","");	
-		}
-	}
-
-	//Scanner
-	/// <summary>
-	///	Define um tipo para representar uma linha.
-	/// </summary>
-	public struct LineSemantic
-	{
-		/// <summary>
-		/// Posição no arquivo.
-		/// </summary>
-		public Int16 Line { get; }
 
 		/// <summary>
-		/// classificação da linha analisada de acordo com sua semântica.
+		/// Utilizado para determinar se um controle do tipo TextBox é relevante para as operações futuras.
 		/// </summary>
-		public ControlDeclarationType Classification { get; }
+		private bool AcceptableControl(TextBox textBox) => AcceptableControls.Any(x => x == textBox.GetType());
 
-		public LineSemantic(Int16 line, ControlDeclarationType dType)
-		{
-			Line = line;
-			Classification = dType;
-		}
+		/// <summary>
+		/// Utilizado para determinar se um controle do tipo Button é relevante para as operações futuras.
+		/// </summary>
+		private bool AcceptableControl(Button button) => AcceptableControls.Any(x => x == button.GetType());
 	}
 
 	#endregion
 
 	#region Montador de Dependência
-
+	//Tem como propósito identificar quais componentes são necessários para acionar um determinado componente.
 	#endregion
 
 	#region Resolver Dependência com o Banco
-
+	//Um teste por definição deve ser independente 
 	#endregion
 
 	#region Gerador de Controles UI
-
+	//Parte final do processo que gerará as clares para a execução dos testes automatizados.
 	#endregion
+
 	//Classe utilizada durante todo o processo, a cada etapa um atributo é colocado na classe.
 	public class TestObject
 	{
 		public Control Control { get; set; }
-
-		public List<LineSemantic> ControlOcorrence { get; set; } = new List<LineSemantic>();
 
 		/// <summary>
 		/// Cada componente deve possuir uma priopridade, essa prioridade definirá a ordem de preenchimento dos componentes.

@@ -58,6 +58,7 @@
 			this.btSend.TabIndex = 1;
 			this.btSend.Text = "Send";
 			this.btSend.UseVisualStyleBackColor = true;
+			this.btSend.Click += new System.EventHandler(this.btSend_Click);
 			// 
 			// txtFirstName
 			// 
@@ -128,6 +129,10 @@
 			this.lbSubject.TabIndex = 9;
 			this.lbSubject.Text = "Subject";
 			this.lbSubject.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// _3TextBox1
+			// 
+	
 			// 
 			// frmMinervaTT
 			// 

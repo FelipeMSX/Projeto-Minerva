@@ -30,9 +30,9 @@ namespace MinervaTG
     {
         
         /// <summary>
-        /// FirstContact
+        /// Estudando uma forma de fechar uma janela modal fora da tela de origem
         /// </summary>
-        public void MinervaTestOne()
+        public void DialogStudy()
         {
             #region Variable Declarations
             WinEdit uITxtFirstNameEdit = this.UIMinervaProjectWindow.UITxtFirstNameWindow.UITxtFirstNameEdit;
@@ -40,67 +40,47 @@ namespace MinervaTG
             WinEdit uITxtEmailEdit = this.UIMinervaProjectWindow.UITxtEmailWindow.UITxtEmailEdit;
             WinEdit uITextBox1Edit = this.UIMinervaProjectWindow.UITextBox1Window.UITextBox1Edit;
             WinButton uISendButton = this.UIMinervaProjectWindow.UISendWindow.UISendButton;
+            WinButton uIOKButton = this.UIMyApplicationWindow.UIOKWindow.UIOKButton;
             #endregion
 
             // Type 'Felipe' in 'txtFirstName' text box
-            uITxtFirstNameEdit.Text = this.MinervaTestOneParams.UITxtFirstNameEditText;
+            uITxtFirstNameEdit.Text = this.DialogStudyParams.UITxtFirstNameEditText;
 
             // Type '{Tab}' in 'txtFirstName' text box
-            Keyboard.SendKeys(uITxtFirstNameEdit, this.MinervaTestOneParams.UITxtFirstNameEditSendKeys, ModifierKeys.None);
+            Keyboard.SendKeys(uITxtFirstNameEdit, this.DialogStudyParams.UITxtFirstNameEditSendKeys, ModifierKeys.None);
 
             // Type 'Morais' in 'txtLastName' text box
-            uITxtLastNameEdit.Text = this.MinervaTestOneParams.UITxtLastNameEditText;
+            uITxtLastNameEdit.Text = this.DialogStudyParams.UITxtLastNameEditText;
 
             // Type '{Tab}' in 'txtLastName' text box
-            Keyboard.SendKeys(uITxtLastNameEdit, this.MinervaTestOneParams.UITxtLastNameEditSendKeys, ModifierKeys.None);
+            Keyboard.SendKeys(uITxtLastNameEdit, this.DialogStudyParams.UITxtLastNameEditSendKeys, ModifierKeys.None);
 
-            // Type 'felipe_link64@hotmail.com' in 'txtEmail' text box
-            uITxtEmailEdit.Text = this.MinervaTestOneParams.UITxtEmailEditText;
-
-            // Type '{Tab}' in 'txtEmail' text box
-            Keyboard.SendKeys(uITxtEmailEdit, this.MinervaTestOneParams.UITxtEmailEditSendKeys, ModifierKeys.None);
-
-            // Type 'this is SPARTAAAAAA!!!' in 'textBox1' text box
-            uITextBox1Edit.Text = this.MinervaTestOneParams.UITextBox1EditText;
-
-            // Click 'Send' button
-            Mouse.Click(uISendButton, new Point(42, 24));
-
-            // Type 'Felipe' in 'txtFirstName' text box
-            uITxtFirstNameEdit.Text = this.MinervaTestOneParams.UITxtFirstNameEditText1;
-
-            // Type '{Tab}' in 'txtFirstName' text box
-            Keyboard.SendKeys(uITxtFirstNameEdit, this.MinervaTestOneParams.UITxtFirstNameEditSendKeys1, ModifierKeys.None);
-
-            // Type 'Morais' in 'txtLastName' text box
-            uITxtLastNameEdit.Text = this.MinervaTestOneParams.UITxtLastNameEditText1;
-
-            // Type '{Tab}' in 'txtLastName' text box
-            Keyboard.SendKeys(uITxtLastNameEdit, this.MinervaTestOneParams.UITxtLastNameEditSendKeys1, ModifierKeys.None);
-
-            // Type 'felipe_link64@hotmail.com' in 'txtEmail' text box
-            uITxtEmailEdit.Text = this.MinervaTestOneParams.UITxtEmailEditText1;
+            // Type 'felipemsx18@gmail.com' in 'txtEmail' text box
+            uITxtEmailEdit.Text = this.DialogStudyParams.UITxtEmailEditText;
 
             // Type '{Tab}' in 'txtEmail' text box
-            Keyboard.SendKeys(uITxtEmailEdit, this.MinervaTestOneParams.UITxtEmailEditSendKeys1, ModifierKeys.None);
+            Keyboard.SendKeys(uITxtEmailEdit, this.DialogStudyParams.UITxtEmailEditSendKeys, ModifierKeys.None);
 
-            // Type 'This is Sparta!!!' in 'textBox1' text box
-            uITextBox1Edit.Text = this.MinervaTestOneParams.UITextBox1EditText1;
+            // Type 'This is SPARTA!!!' in 'textBox1' text box
+            uITextBox1Edit.Text = this.DialogStudyParams.UITextBox1EditText;
+	
+			// Click 'Send' button
+			Mouse.Click(uISendButton, new Point(21, 15));
 
-            // Click 'Send' button
-            Mouse.Click(uISendButton, new Point(31, 15));
+            // Click 'OK' button
+            Mouse.Click(uIOKButton, new Point(43, 21));
         }
         
         #region Properties
-        public virtual MinervaTestOneParams MinervaTestOneParams
+        public virtual DialogStudyParams DialogStudyParams
         {
             get
             {
-                if ((this.mMinervaTestOneParams == null))
+                if ((this.mDialogStudyParams == null))
                 {
-                    this.mMinervaTestOneParams = new MinervaTestOneParams();
+                    this.mDialogStudyParams = new DialogStudyParams();
                 }
-                return this.mMinervaTestOneParams;
+                return this.mDialogStudyParams;
             }
         }
         
@@ -115,20 +95,34 @@ namespace MinervaTG
                 return this.mUIMinervaProjectWindow;
             }
         }
+        
+        public UIMyApplicationWindow UIMyApplicationWindow
+        {
+            get
+            {
+                if ((this.mUIMyApplicationWindow == null))
+                {
+                    this.mUIMyApplicationWindow = new UIMyApplicationWindow();
+                }
+                return this.mUIMyApplicationWindow;
+            }
+        }
         #endregion
         
         #region Fields
-        private MinervaTestOneParams mMinervaTestOneParams;
+        private DialogStudyParams mDialogStudyParams;
         
         private UIMinervaProjectWindow mUIMinervaProjectWindow;
+        
+        private UIMyApplicationWindow mUIMyApplicationWindow;
         #endregion
     }
     
     /// <summary>
-    /// Parameters to be passed into 'MinervaTestOne'
+    /// Parameters to be passed into 'DialogStudy'
     /// </summary>
     [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
-    public class MinervaTestOneParams
+    public class DialogStudyParams
     {
         
         #region Fields
@@ -153,9 +147,9 @@ namespace MinervaTG
         public string UITxtLastNameEditSendKeys = "{Tab}";
         
         /// <summary>
-        /// Type 'felipe_link64@hotmail.com' in 'txtEmail' text box
+        /// Type 'felipemsx18@gmail.com' in 'txtEmail' text box
         /// </summary>
-        public string UITxtEmailEditText = "felipe_link64@hotmail.com";
+        public string UITxtEmailEditText = "felipemsx18@gmail.com";
         
         /// <summary>
         /// Type '{Tab}' in 'txtEmail' text box
@@ -163,44 +157,9 @@ namespace MinervaTG
         public string UITxtEmailEditSendKeys = "{Tab}";
         
         /// <summary>
-        /// Type 'this is SPARTAAAAAA!!!' in 'textBox1' text box
+        /// Type 'This is SPARTA!!!' in 'textBox1' text box
         /// </summary>
-        public string UITextBox1EditText = "this is SPARTAAAAAA!!!";
-        
-        /// <summary>
-        /// Type 'Felipe' in 'txtFirstName' text box
-        /// </summary>
-        public string UITxtFirstNameEditText1 = "Felipe";
-        
-        /// <summary>
-        /// Type '{Tab}' in 'txtFirstName' text box
-        /// </summary>
-        public string UITxtFirstNameEditSendKeys1 = "{Tab}";
-        
-        /// <summary>
-        /// Type 'Morais' in 'txtLastName' text box
-        /// </summary>
-        public string UITxtLastNameEditText1 = "Morais";
-        
-        /// <summary>
-        /// Type '{Tab}' in 'txtLastName' text box
-        /// </summary>
-        public string UITxtLastNameEditSendKeys1 = "{Tab}";
-        
-        /// <summary>
-        /// Type 'felipe_link64@hotmail.com' in 'txtEmail' text box
-        /// </summary>
-        public string UITxtEmailEditText1 = "felipe_link64@hotmail.com";
-        
-        /// <summary>
-        /// Type '{Tab}' in 'txtEmail' text box
-        /// </summary>
-        public string UITxtEmailEditSendKeys1 = "{Tab}";
-        
-        /// <summary>
-        /// Type 'This is Sparta!!!' in 'textBox1' text box
-        /// </summary>
-        public string UITextBox1EditText1 = "This is Sparta!!!";
+        public string UITextBox1EditText = "This is SPARTA!!!";
         #endregion
     }
     
@@ -468,6 +427,79 @@ namespace MinervaTG
         
         #region Fields
         private WinButton mUISendButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIMyApplicationWindow : WinWindow
+    {
+        
+        public UIMyApplicationWindow()
+        {
+            #region Search Criteria
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "My Application";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("My Application");
+            #endregion
+        }
+        
+        #region Properties
+        public UIOKWindow UIOKWindow
+        {
+            get
+            {
+                if ((this.mUIOKWindow == null))
+                {
+                    this.mUIOKWindow = new UIOKWindow(this);
+                }
+                return this.mUIOKWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIOKWindow mUIOKWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIOKWindow : WinWindow
+    {
+        
+        public UIOKWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1";
+            this.WindowTitles.Add("My Application");
+			object o1 = WinWindow.PropertyNames.AccessibleName;
+			object o2 = WinWindow.PropertyNames.AccessibleDescription;
+			object o3 = WinWindow.PropertyNames.AccessKey;
+			object o4 = WinWindow.PropertyNames.ClassName;
+
+			#endregion
+		}
+
+		#region Properties
+		public WinButton UIOKButton
+        {
+            get
+            {
+                if ((this.mUIOKButton == null))
+                {
+                    this.mUIOKButton = new WinButton(this);
+                    #region Search Criteria
+                    this.mUIOKButton.SearchProperties[WinButton.PropertyNames.Name] = "OK";
+                    this.mUIOKButton.WindowTitles.Add("My Application");
+                    #endregion
+                }
+                return this.mUIOKButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUIOKButton;
         #endregion
     }
 }

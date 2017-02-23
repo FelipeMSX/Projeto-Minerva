@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<UITest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Id="a059d737-0f5b-424d-9efd-6594021f8fed" AssemblyVersion="14.0.23107.0" Version="1.0" xmlns="http://schemas.microsoft.com/VisualStudio/TeamTest/UITest/2010">
+<UITest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Id="691a7dc4-6017-4c31-9ed6-74d55cb7a9f9" AssemblyVersion="14.0.23107.0" Version="1.0" xmlns="http://schemas.microsoft.com/VisualStudio/TeamTest/UITest/2010">
   <Configuration>
     <Group Name="IE">
       <Setting Name="Version" Value="9.11.14393.0" WarningLevel="1" />
       <Setting Name="InformationBar" WarningLevel="1" />
-      <Setting Name="AutoCompletePassword" Value="no" WarningLevel="1" />
-      <Setting Name="AutoCompleteForm" Value="no" WarningLevel="1" />
+      <Setting Name="AutoCompletePassword" WarningLevel="1" />
+      <Setting Name="AutoCompleteForm" WarningLevel="1" />
       <Setting Name="DefaultBrowser" Value="IEXPLORE.EXE" WarningLevel="1" />
       <Setting Name="PopupBlocker" Value="yes" WarningLevel="1" />
       <Setting Name="TabbedBrowsing" WarningLevel="2" />
@@ -17,7 +17,7 @@
       <Setting Name="EnhancedSecurityConfiguration" WarningLevel="1" />
     </Group>
     <Group Name="OS">
-      <Setting Name="Name" Value="Microsoft Windows 10 Pro" WarningLevel="2" />
+      <Setting Name="Name" Value="Microsoft Windows 10 Home Single Language" WarningLevel="2" />
       <Setting Name="Version" Value="Microsoft Windows NT 10.0.14393.0" WarningLevel="2" />
       <Setting Name="IsUserAdmin" Value="False" WarningLevel="2" />
       <Setting Name="Is64BitOperatingSystem" Value="True" WarningLevel="2" />
@@ -25,7 +25,7 @@
       <Setting Name="OSLanguage" Value="1046" WarningLevel="1" />
       <Setting Name="UserLocale" Value="1046" WarningLevel="1" />
       <Setting Name="DragFullWindows" Value="True" WarningLevel="2" />
-      <Setting Name="ScreenResolutionWidth" Value="2560" WarningLevel="2" />
+      <Setting Name="ScreenResolutionWidth" Value="1920" WarningLevel="2" />
       <Setting Name="ScreenResolutionHeight" Value="1080" WarningLevel="2" />
       <Setting Name="SystemDPIX" Value="96" WarningLevel="2" />
       <Setting Name="SystemDPIY" Value="96" WarningLevel="2" />
@@ -65,7 +65,7 @@
     </SendKeysAction>
     <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtEmailWindow.UITxtEmailEdit">
       <ParameterName />
-      <Value Encoded="false">felipe_link64@hotmail.com</Value>
+      <Value Encoded="false">felipemsx18@gmail.com</Value>
       <Type>String</Type>
     </SetValueAction>
     <SendKeysAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtEmailWindow.UITxtEmailEdit">
@@ -76,66 +76,28 @@
     </SendKeysAction>
     <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITextBox1Window.UITextBox1Edit">
       <ParameterName />
-      <Value Encoded="false">this is SPARTAAAAAA!!!</Value>
+      <Value Encoded="false">This is SPARTA!!!</Value>
       <Type>String</Type>
     </SetValueAction>
     <MouseAction UIObjectName="UIMap.UIMinervaProjectWindow.UISendWindow.UISendButton">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
       <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="42" Y="24" />
+      <Location X="21" Y="15" />
       <WheelDirection>0</WheelDirection>
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
     </MouseAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtFirstNameWindow.UITxtFirstNameEdit">
-      <ParameterName />
-      <Value Encoded="false">Felipe</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <SendKeysAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtFirstNameWindow.UITxtFirstNameEdit">
+    <MouseAction UIObjectName="UIMap.UIMyApplicationWindow.UIOKWindow.UIOKButton">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
       <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Text Encoded="false">{Tab}</Text>
-    </SendKeysAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtLastNameWindow.UITxtLastNameEdit">
-      <ParameterName />
-      <Value Encoded="false">Morais</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <SendKeysAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtLastNameWindow.UITxtLastNameEdit">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Text Encoded="false">{Tab}</Text>
-    </SendKeysAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtEmailWindow.UITxtEmailEdit">
-      <ParameterName />
-      <Value Encoded="false">felipe_link64@hotmail.com</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <SendKeysAction UIObjectName="UIMap.UIMinervaProjectWindow.UITxtEmailWindow.UITxtEmailEdit">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Text Encoded="false">{Tab}</Text>
-    </SendKeysAction>
-    <SetValueAction UIObjectName="UIMap.UIMinervaProjectWindow.UITextBox1Window.UITextBox1Edit">
-      <ParameterName />
-      <Value Encoded="false">This is Sparta!!!</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <MouseAction UIObjectName="UIMap.UIMinervaProjectWindow.UISendWindow.UISendButton">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="31" Y="15" />
+      <Location X="43" Y="21" />
       <WheelDirection>0</WheelDirection>
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
     </MouseAction>
-    <TestStepMarkerAction Comment="FirstContact" MarkerInformation="MinervaTestOne">
+    <TestStepMarkerAction Comment="Estudando uma forma de fechar uma janela modal fora da tela de origem" MarkerInformation="DialogStudy">
       <ParameterName />
       <StepId>-1</StepId>
       <Direction>Start</Direction>
@@ -150,7 +112,7 @@
   <Maps>
     <UIMap Id="UIMap">
       <TopLevelWindows>
-        <TopLevelWindow ControlType="Window" Id="UIMinervaProjectWindow" FriendlyName="Minerva Project" SpecialControlType="None" SessionId="591560">
+        <TopLevelWindow ControlType="Window" Id="UIMinervaProjectWindow" FriendlyName="Minerva Project" SpecialControlType="None" SessionId="1181002">
           <TechnologyName>MSAA</TechnologyName>
           <WindowTitles>
             <WindowTitle>Minerva Project</WindowTitle>
@@ -312,6 +274,54 @@
                   </SearchConfigurations>
                   <AndCondition Id="SearchCondition">
                     <PropertyCondition Name="Name">Send</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIMyApplicationWindow" FriendlyName="My Application" SpecialControlType="None" SessionId="3344604">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>My Application</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">My Application</PropertyCondition>
+            <PropertyCondition Name="ClassName">#32770</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Window" Id="UIOKWindow" FriendlyName="OK" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>My Application</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlId">1</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Button" Id="UIOKButton" FriendlyName="OK" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>My Application</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">OK</PropertyCondition>
                     <PropertyCondition Name="ControlType">Button</PropertyCondition>
                   </AndCondition>
                   <SupportLevel>0</SupportLevel>

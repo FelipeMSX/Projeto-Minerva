@@ -13,20 +13,21 @@ using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 namespace MinervaTG
 {
 	/// <summary>
-	/// Summary description for frmMinerva
+	/// Summary description for CodedUITest1
 	/// </summary>
 	[CodedUITest]
-	public class frmMinerva
+	public class DialogStudy
 	{
-		public frmMinerva()
+		public DialogStudy()
 		{
 		}
 
 		[TestMethod]
-		public void CodedUITestMethod1()
+		public void DialogTest()
 		{
 			// To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
-			this.UIMap.MinervaTestOne();
+			this.UIMap.DialogStudy();
+
 		}
 
 		#region Additional test attributes

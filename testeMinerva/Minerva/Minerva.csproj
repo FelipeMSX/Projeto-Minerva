@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\3TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\3TextBox.Designer.cs">
+      <DependentUpon>3TextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMinervaTT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,8 +60,12 @@
       <DependentUpon>frmMinervaTT.cs</DependentUpon>
     </Compile>
     <Compile Include="Minerva.cs" />
+    <Compile Include="MinervaTesteExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\3TextBox.resx">
+      <DependentUpon>3TextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMinervaTT.resx">
       <DependentUpon>frmMinervaTT.cs</DependentUpon>
     </EmbeddedResource>

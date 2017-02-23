@@ -54,7 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="frmMinerva.cs" />
+    <Compile Include="DialogStudy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIMap.cs">
       <DependentUpon>UIMap.uitest</DependentUpon>
